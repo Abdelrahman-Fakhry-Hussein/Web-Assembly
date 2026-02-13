@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <title>Tribonacci</title>
+    <style>
+        body{ font-family:Arial; margin:50px; 
+            background:#eee; }
+        .box{ background:white; padding:30px;
+             width:50%; border-radius:8px; }
+        h2{ margin-top:0; font-size:70px; }
+         p{ font-size:36px; }
+            input{ padding:20px;
+            width:180px; 
+            font-size:36px; }
+        button{ padding:20px 40px;
+            font-size:36px; }
+        #result{ margin-top:20px;
+            font-size:40px; color:green; }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="box">
+        <h2>Tribonacci</h2>
+            <p>0,0,1,1,2,4,7,13,24...</p>
+        <input type="number" id="num" value="10">
+        <button onclick="calcula()">
+            Calculate
+        </button>
+        <div id="result">
+        </div>
+    </div>
+
+    <script src="tribonacci.js">
+    </script>
+        <script>
+            function calcula()
+            {
+                var n = document.getElementById('num').value;
+                var results = Module.ccall('tribonacci','number',['number'],[n]);
+                document.getElementById('result').innerHTML = 'Output = ' + results;}
+        </script>
+</body>
+
+</html>
